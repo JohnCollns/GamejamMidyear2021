@@ -13,14 +13,14 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D col;
     private float halfColHeight;
 
-    // Get a sprite renderer
+    private SpriteRenderer sr;
     private bool facingRight = true;
 
     public float allowableGroundedDist = 0.005f;
     private bool isGrounded = false;
     private int platformLayerMask;
     
-    // For the following 0- indicates grounded,     1- indicates airborne
+    // For the following    0- indicates grounded,     1- indicates airborne
     public float[] jumpAcc;
     private Vector3[] jumpForce;
     public float[] maxSpeed;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         col = GetComponent<BoxCollider2D>();
         wrb = weight.GetComponent<Rigidbody2D>();
         platformLayerMask = (LayerMask.GetMask("Platform") | LayerMask.GetMask("Weight"));
@@ -51,8 +52,8 @@ public class PlayerController : MonoBehaviour
         // For the score
         SetText();
 
-        print("Player pos: " + transform.position + ", col center: " + col.bounds.center +
-            ", col extents: " + col.bounds.extents + ", col max: " + col.bounds.max + ", col min: " + col.bounds.min);
+        //print("Player pos: " + transform.position + ", col center: " + col.bounds.center +
+        //    ", col extents: " + col.bounds.extents + ", col max: " + col.bounds.max + ", col min: " + col.bounds.min);
 
         curFuel = maxFuel;
         jumpForce = new Vector3[2]{new Vector3(0f, jumpAcc[0], 0f), new Vector3(0f, jumpAcc[1], 0f)};
@@ -84,6 +85,8 @@ public class PlayerController : MonoBehaviour
             float multiplier = AccelerateAwayFromVelo() ? wrongWayMultiplier : 1f;
             if (Mathf.Abs(rb.velocity.x) < maxSpeed[controlIndex] || AccelerateAwayFromVelo())
                 rb.AddForce(sideForce[controlIndex] * Input.GetAxisRaw("Horizontal") * multiplier);
+            facingRight = Input.GetAxisRaw("Horizontal") > 0;
+            sr.flipX = facingRight;
         }
 
         if (isGrounded && !jumpCommand) // Player is on the ground and not going to jump, so recharge jetpack. 
@@ -109,17 +112,25 @@ public class PlayerController : MonoBehaviour
             }
         }
             
+        // See if the score needs updating
+        if (Mathf.Floor(transform.position.y) > score)
+        {
+            score = Mathf.FloorToInt(transform.position.y);
+            SetText();
+        }
     }
 
     private bool GetGrounded()
     {
-        //Vector3 origin = transform.position;
+        // Could be improved by putting these in an array and using a for loop instead of three if's. 
         float minDist = Mathf.Infinity;
         Vector3 originLeft = col.bounds.min;
         Vector3 originRight = col.bounds.min + new Vector3(col.bounds.extents.x * 2, 0f,0f);
+        Vector3 originMid = col.bounds.min + new Vector3(col.bounds.extents.x, 0f,0f);
         //print("Grounded raycast starting from left: " + originLeft + ", right: " + originRight);
         RaycastHit2D hitLeft = Physics2D.Raycast(originLeft, Vector3.down, 5f, platformLayerMask);
         RaycastHit2D hitRight = Physics2D.Raycast(originRight, Vector3.down, 5f, platformLayerMask);
+        RaycastHit2D hitMid = Physics2D.Raycast(originMid, Vector3.down, 5f, platformLayerMask);
         if (hitLeft.collider != null)
             minDist = hitLeft.distance;
         if (hitRight.collider != null)
@@ -128,6 +139,9 @@ public class PlayerController : MonoBehaviour
             if (hitRight.distance < minDist)
                 minDist = hitRight.distance;
         }
+        if (hitMid.collider != null)
+            if (hitMid.distance < minDist)
+                minDist = hitMid.distance;
         return minDist <= allowableGroundedDist;
     }
 

@@ -1724,6 +1724,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1241675151873431787, guid: 3155105a2bb5e86448e0a914c526532d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1241675151873431796, guid: 3155105a2bb5e86448e0a914c526532d, type: 3}
       propertyPath: m_Name
       value: ball
@@ -1798,12 +1802,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2131432589}
     - target: {fileID: 1761848334567752584, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1761848334567752584, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1842882245
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 749c12a6360900945bae68d33f280421, type: 3}
