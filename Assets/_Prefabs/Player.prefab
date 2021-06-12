@@ -51,7 +51,7 @@ MonoBehaviour:
   allowableGroundedDist: 0.02
   jumpAcc:
   - 350
-  - 560
+  - 580
   maxSpeed:
   - 4
   - 3
