@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class WaterController : MonoBehaviour
 {
-    private GameController gCont;
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -14,10 +14,5 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void GetGCont(GameController newGCont)
-    {
-        this.gCont = newGCont;
     }
 }
