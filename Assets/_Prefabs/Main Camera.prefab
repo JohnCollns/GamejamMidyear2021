@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 2094138617344066002}
   - component: {fileID: 1378671530275949944}
   - component: {fileID: 3105561301611841836}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Wall Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4580003591009578120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -337,7 +337,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5338633564757227459}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 1637864117201505453}
   - component: {fileID: 1700765066802029563}
   - component: {fileID: 8484648517093113377}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Wall Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

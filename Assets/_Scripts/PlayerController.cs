@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     public float fuelDrainRate;     // How many fuel units per second the fuel depletes when using the jetpack. 
     private bool jumpCommand;
 
+    // Slow variables
+    float curSlow = 0f;
+    float slowRemaining = 0f;
+
     // Score Variables 
     public int score;
     public Text scoreText;  
@@ -94,6 +98,17 @@ public class PlayerController : MonoBehaviour
         else
             jumpCommand = false;
         //print("Jump command: " + jumpCommand + ", jump axis: " + Input.GetAxisRaw("Jump"));
+
+        if (slowRemaining > 0)
+        {
+            slowRemaining -= Time.deltaTime;
+            if (slowRemaining <= 0)
+            {
+                slowRemaining = 0;
+                curSlow = 0f;
+            }
+        }
+            
     }
 
     private bool GetGrounded()
@@ -122,9 +137,11 @@ public class PlayerController : MonoBehaviour
                 (rb.velocity.x < 0 && Input.GetAxisRaw("Horizontal") > 0);  // Player is moving left and input is move right
     }
 
-    //IEnumerator Recharge()
+    //IEnumerator TakeHurt(float slowAmount, float slowDuration)
     //{
-
+    //    curSlow = slowAmount;
+    //    yield return new WaitForSeconds(slowDuration);
+    //    curSlow = 0f;
     //}
 
     public void GetGCont(GameController newGCont)
