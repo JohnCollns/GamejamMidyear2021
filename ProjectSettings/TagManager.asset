@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1720811129
+    locked: 0
+  - name: Enemy
+    uniqueID: 1429321781
+    locked: 0
+  - name: Weight
+    uniqueID: 2528612707
+    locked: 0
+  - name: Player
+    uniqueID: 1842882245
+    locked: 0
+  - name: Overlay
+    uniqueID: 966785203
+    locked: 0
