@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         wrb = weight.GetComponent<Rigidbody2D>();
-        platformLayerMask = (LayerMask.GetMask("Platform"));
+        platformLayerMask = (LayerMask.GetMask("Platform") | LayerMask.GetMask("Weight"));
 
         print("Player pos: " + transform.position + ", col center: " + col.bounds.center +
             ", col extents: " + col.bounds.extents + ", col max: " + col.bounds.max + ", col min: " + col.bounds.min);
