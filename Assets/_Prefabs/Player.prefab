@@ -49,12 +49,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: {fileID: 0}
   allowableGroundedDist: 0.02
-  jumpAcc: []
-  maxSpeed: []
-  sidewaysAcc: []
-  maxFuel: 0
-  fuelRechargeRate: 0
-  fuelDrainRate: 0
+  jumpAcc:
+  - 350
+  - 500
+  maxSpeed:
+  - 4
+  - 3
+  sidewaysAcc:
+  - 400
+  - 300
+  wrongWayMultiplier: 1.5
+  maxFuel: 10
+  fuelRechargeRate: 6
+  fuelDrainRate: 3
 --- !u!50 &1677336157274510092
 Rigidbody2D:
   serializedVersion: 4

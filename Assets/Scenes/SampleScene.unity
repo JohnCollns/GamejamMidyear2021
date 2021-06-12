@@ -622,7 +622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: fuelDrainRate
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: fuelRechargeRate
@@ -646,11 +646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: maxSpeed.Array.data[0]
-      value: 15
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: maxSpeed.Array.data[1]
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: sidewaysAcc.Array.size
@@ -658,7 +658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: sidewaysAcc.Array.data[0]
-      value: 700
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: sidewaysAcc.Array.data[1]

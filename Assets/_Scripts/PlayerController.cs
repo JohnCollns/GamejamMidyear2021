@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public float[] maxSpeed;
     public float[] sidewaysAcc;
     private Vector3[] sideForce;
+    public float wrongWayMultiplier = 1.5f;
     public float maxFuel;
     private float curFuel;
     public float fuelRechargeRate;  // How many fuel units per second the fuel recharges on the ground. 
@@ -63,8 +64,9 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            if (Mathf.Abs(rb.velocity.x) < maxSpeed[controlIndex])
-                rb.AddForce(sideForce[controlIndex] * Input.GetAxisRaw("Horizontal"));
+            float multiplier = AccelerateAwayFromVelo() ? wrongWayMultiplier : 1f;
+            if (Mathf.Abs(rb.velocity.x) < maxSpeed[controlIndex] || AccelerateAwayFromVelo())
+                rb.AddForce(sideForce[controlIndex] * Input.GetAxisRaw("Horizontal") * multiplier);
         }
 
         if (isGrounded && !jumpCommand) // Player is on the ground and not going to jump, so recharge jetpack. 
@@ -99,6 +101,12 @@ public class PlayerController : MonoBehaviour
                 minDist = hitRight.distance;
         }
         return minDist <= allowableGroundedDist;
+    }
+
+    private bool AccelerateAwayFromVelo()
+    {
+        return (rb.velocity.x > 0 && Input.GetAxisRaw("Horizontal") < 0) || // Player is moving right and input is move left
+                (rb.velocity.x < 0 && Input.GetAxisRaw("Horizontal") > 0);  // Player is moving left and input is move right
     }
 
     //IEnumerator Recharge()
