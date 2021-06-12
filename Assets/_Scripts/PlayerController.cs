@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,12 +32,20 @@ public class PlayerController : MonoBehaviour
     public float fuelRechargeRate;  // How many fuel units per second the fuel recharges on the ground. 
     public float fuelDrainRate;     // How many fuel units per second the fuel depletes when using the jetpack. 
     private bool jumpCommand;
+
+    // Score Variables 
+    public int score;
+    public Text scoreText;  
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         wrb = weight.GetComponent<Rigidbody2D>();
         platformLayerMask = (LayerMask.GetMask("Platform") | LayerMask.GetMask("Weight"));
+
+        // For the score
+        SetText();
 
         print("Player pos: " + transform.position + ", col center: " + col.bounds.center +
             ", col extents: " + col.bounds.extents + ", col max: " + col.bounds.max + ", col min: " + col.bounds.min);
@@ -45,6 +54,7 @@ public class PlayerController : MonoBehaviour
         jumpForce = new Vector3[2]{new Vector3(0f, jumpAcc[0], 0f), new Vector3(0f, jumpAcc[1], 0f)};
         sideForce = new Vector3[2] { new Vector3(sidewaysAcc[0], 0f, 0f), new Vector3(sidewaysAcc[1], 0f, 0f) };
         print("Jump Force: " + jumpForce[0] + ", " + jumpForce[1]);
+
     }
 
     private void FixedUpdate()
@@ -121,4 +131,25 @@ public class PlayerController : MonoBehaviour
     {
         this.gCont = newGCont;
     }
+
+    void SetText()
+    {
+        scoreText.text = score.ToString();
+    }
+
+    // Sum Function for the accumulation of points 
+    public void AddPoints(int points)
+    {
+        // points will be based on the number of metres
+        // will need to link with another script 
+        score = score + points;
+        // Update the score on screen
+        SetText();
+    }
+
+    public void GameOver()
+    {
+        // will need to link this to when the player falls off or loses to an enemy?
+    }
+
 }
