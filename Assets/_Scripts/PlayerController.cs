@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D col;
     private float halfColHeight;
 
+    // Get a sprite renderer
+    private bool facingRight = true;
+
     public float allowableGroundedDist = 0.005f;
     private bool isGrounded = false;
     private int platformLayerMask;
@@ -96,7 +99,7 @@ public class PlayerController : MonoBehaviour
             minDist = hitLeft.distance;
         if (hitRight.collider != null)
         {
-            print("Hit right hit: " + hitRight.collider.name + ", with distance away: " + hitRight.distance + ", result isGrounded: " + (hitRight.distance < minDist));
+            //print("Hit right hit: " + hitRight.collider.name + ", with distance away: " + hitRight.distance + ", result isGrounded: " + (hitRight.distance < minDist));
             if (hitRight.distance < minDist)
                 minDist = hitRight.distance;
         }

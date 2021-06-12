@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 128971457}
   - component: {fileID: 128971456}
   - component: {fileID: 128971455}
-  - component: {fileID: 128971454}
   - component: {fileID: 128971453}
+  - component: {fileID: 128971454}
   m_Layer: 8
   m_Name: Chain Link (1)
   m_TagString: Untagged
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -616,8 +616,8 @@ GameObject:
   - component: {fileID: 1105757399}
   - component: {fileID: 1105757398}
   - component: {fileID: 1105757397}
-  - component: {fileID: 1105757396}
   - component: {fileID: 1105757395}
+  - component: {fileID: 1105757396}
   m_Layer: 8
   m_Name: Chain Link (2)
   m_TagString: Untagged
@@ -637,7 +637,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -884,8 +884,8 @@ GameObject:
   - component: {fileID: 1919229106}
   - component: {fileID: 1919229105}
   - component: {fileID: 1919229104}
-  - component: {fileID: 1919229103}
   - component: {fileID: 1919229102}
+  - component: {fileID: 1919229103}
   m_Layer: 8
   m_Name: Chain Link (3)
   m_TagString: Untagged
@@ -905,7 +905,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1039,8 +1039,8 @@ GameObject:
   - component: {fileID: 2104802590}
   - component: {fileID: 2104802589}
   - component: {fileID: 2104802588}
-  - component: {fileID: 2104802587}
   - component: {fileID: 2104802586}
+  - component: {fileID: 2104802587}
   m_Layer: 8
   m_Name: Chain Link
   m_TagString: Untagged
@@ -1060,7 +1060,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1110,7 +1110,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.5, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -0.38888893}
+  m_ConnectedAnchor: {x: 0, y: -0.19444446}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1176,7 +1176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104802585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 1.05, z: 0.58146465}
+  m_LocalPosition: {x: -0.75, y: 1.05, z: -1}
   m_LocalScale: {x: 1.5, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1203,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510320, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1677336157274510320, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: m_LocalPosition.z
