@@ -39,7 +39,13 @@ public class PlayerController : MonoBehaviour
 
     // Score Variables 
     public int score;
-    public Text scoreText;  
+    public Text scoreText;
+
+    // Fuel Meter Variables 
+    public Slider meter;
+    public Gradient fuelGradient;
+    public Image fuelFill;
+    //public int maxFuel = 20;
 
     void Start()
     {
@@ -118,6 +124,7 @@ public class PlayerController : MonoBehaviour
             score = Mathf.FloorToInt(transform.position.y);
             SetText();
         }
+        meter.value =  curFuel;
     }
 
     private bool GetGrounded()
@@ -176,6 +183,13 @@ public class PlayerController : MonoBehaviour
         score = score + points;
         // Update the score on screen
         SetText();
+    }
+
+    public void SetFuel(int fuel)
+    {
+        meter.value = fuel;
+        // calculates the colour at the given time 
+        fuelFill.color = fuelGradient.Evaluate(1f);
     }
 
     public void GameOver()
