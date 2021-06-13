@@ -102,12 +102,12 @@ MonoBehaviour:
   slowDuration: 1.6
   agroRadius: 7
   speed:
-  - 2.7
+  - 2.3
   - 4
-  travelPeriod: 2
+  travelPeriod: 1.7
   angleRange:
-  - 60
-  - 130
+  - 20
+  - -45
   turningCoef: 0.3
 --- !u!58 &1088739683327181462
 CircleCollider2D:
