@@ -721,6 +721,8 @@ MonoBehaviour:
   - 60
   - 130
   turningCoef: 0.3
+  push: []
+  pushMag: []
 --- !u!4 &445630901
 Transform:
   m_ObjectHideFlags: 0
@@ -1097,6 +1099,8 @@ MonoBehaviour:
   - 60
   - 130
   turningCoef: 0.3
+  push: []
+  pushMag: []
 --- !u!4 &1005290668
 Transform:
   m_ObjectHideFlags: 0
