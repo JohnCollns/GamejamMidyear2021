@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
     {
         meter.value = fuel;
         // calculates the colour at the given time 
-        fuelFill.color = fuelGradient.Evaluate(1f);
+        fuelFill.color = fuelGradient.Evaluate(curFuel/maxFuel);
     }
 
     public void GameOver()
