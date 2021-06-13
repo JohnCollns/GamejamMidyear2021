@@ -11,10 +11,12 @@ public class WaterSpriteController : MonoBehaviour
     public float oscillationAmount = 2f;
     public float curOsc = 0f;
     private float waterLevel;
+    private float yOffset;
     void Start()
     {
         timeCoef = (2 * Mathf.PI) / travelPeriod;
         waterLevel = transform.position.y;
+        yOffset = transform.position.y;
     }
 
     // Update is called once per frame
