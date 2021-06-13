@@ -1344,82 +1344,6 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1847986272}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.atime1
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.ctime0
-      value: 16769
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.ctime1
-      value: 25058
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.ctime2
-      value: 47802
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.ctime3
-      value: 53199
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key0.b
-      value: 0.14219637
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key0.g
-      value: 0.11774653
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key0.r
-      value: 0.9245283
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key1.b
-      value: 0.105882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key1.g
-      value: 0.8497471
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key1.r
-      value: 0.8773585
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key2.b
-      value: 0.09625311
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key2.g
-      value: 0.9508398
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key2.r
-      value: 0.9716981
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key3.b
-      value: 0.10588237
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key3.g
-      value: 0.8784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.key3.r
-      value: 0.26069355
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: fuelGradient.m_NumColorKeys
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 749c12a6360900945bae68d33f280421, type: 3}
 --- !u!1001 &3700088844371672215
@@ -1498,14 +1422,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4695175608641802033, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 380
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695175608641802033, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 160
-      objectReference: {fileID: 0}
     - target: {fileID: 4695175608848482210, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1593,10 +1509,6 @@ PrefabInstance:
     - target: {fileID: 4695175608848482238, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695175610000476856, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 8176402925587960255, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
       propertyPath: m_AnchorMax.x
