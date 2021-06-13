@@ -26,8 +26,8 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         angle = Random.Range(angleRange[0] * Mathf.Deg2Rad, angleRange[1] * Mathf.Deg2Rad);
-        int dir = transform.position.x > 0 ? 1 : -1;
-        passiveWalk = new Vector3(Mathf.Cos(angle) * dir, Mathf.Sin(angle) * dir, 0f) * speed[0];
+        int dir = transform.position.x < 0 ? 1 : -1; // On the right: -1,    on the left: 1
+        passiveWalk = new Vector3(Mathf.Cos(angle) * dir, Mathf.Sin(angle), 0f) * speed[0];
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         box.enabled = false;
@@ -44,7 +44,22 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int dir = transform.position.x < 0 ? 1 : -1;
+        print("Spider: " + name + ", dir: " + dir + ", at x: " + transform.position.x);
+        Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angleRange[0] * Mathf.Deg2Rad) * dir, Mathf.Sin(angleRange[0] * Mathf.Deg2Rad)) * 5f + transform.position);
+        Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angleRange[1] * Mathf.Deg2Rad) * dir, Mathf.Sin(angleRange[1] * Mathf.Deg2Rad)) * 5f + transform.position);
+        // Red line: passive walk
+        Debug.DrawLine(transform.position, passiveWalk / speed[0] * 5f + transform.position, Color.red);
+        // Blue line: angle direction
+        Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angle * dir), Mathf.Sin(angle)) * 5f + transform.position, Color.blue);
+
+        //int dir = transform.position.x < 0 ? 1 : -1;
+        //Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angleRange[0] * Mathf.Deg2Rad * dir), Mathf.Sin(angleRange[0] * Mathf.Deg2Rad * dir)) * 5f + transform.position);
+        //Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angleRange[1] * Mathf.Deg2Rad * dir), Mathf.Sin(angleRange[1] * Mathf.Deg2Rad * dir)) * 5f + transform.position);
+        //// Red line: passive walk
+        //Debug.DrawLine(transform.position, passiveWalk / speed[0] * 5f + transform.position, Color.red);
+        //// Blue line: angle direction
+        //Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angle * dir), Mathf.Sin(angle * dir)) * 5f + transform.position, Color.blue);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -126,4 +141,6 @@ public class EnemyController : MonoBehaviour
         rb.gravityScale = 1;
         box.enabled = true;
     }
+
+
 }
