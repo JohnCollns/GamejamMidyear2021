@@ -20,7 +20,7 @@ public class WaterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0f, baseSpeed * (Time.time));
+        transform.position = new Vector3(0f, baseSpeed * (Time.timeSinceLevelLoad));
         foreach (WaterSpriteController w in childrenConts)
             w.SetDesiredLevel(transform.position.y);
     }

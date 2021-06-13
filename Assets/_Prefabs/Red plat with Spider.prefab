@@ -115,6 +115,7 @@ MonoBehaviour:
   pushMag:
   - 200
   - 251
+  deadSprite: {fileID: 21300000, guid: 542d7fd2922c4a24bb0929b557a630a3, type: 3}
 --- !u!58 &4136858169003598524
 CircleCollider2D:
   m_ObjectHideFlags: 0

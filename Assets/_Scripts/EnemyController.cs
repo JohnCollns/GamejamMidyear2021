@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
     private PlayerController pCont;
     private int platLayer;
     private int playerLayer;
+    public Sprite deadSprite;
+    private SpriteRenderer sr;
     void Start()
     {
         angle = Random.Range(angleRange[0] * Mathf.Deg2Rad, angleRange[1] * Mathf.Deg2Rad);
@@ -37,6 +39,7 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         cir = GetComponent<CircleCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
         box.enabled = false;
         timeCoef = (2 * Mathf.PI) / travelPeriod;
 
@@ -106,7 +109,7 @@ public class EnemyController : MonoBehaviour
                 {
                     Vector3 pushVec = (collision.transform.position - transform.position).normalized * pushMag[0];
                     collision.rigidbody.AddForce(pushVec, ForceMode2D.Impulse);
-                    rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
+                    //rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
                     print("Hurting the player, pushing them by vector: " + pushVec);
                     //pCont.GetSlowed()
                     //print("Applying to rigidbody: " + collision.rigidbody.gameObject.name + ", or other rigidbody: " + collision.otherRigidbody.name);
@@ -118,7 +121,7 @@ public class EnemyController : MonoBehaviour
             {
                 Vector3 pushVec = (transform.position - collision.transform.position).normalized * pushMag[1];
                 collision.otherRigidbody.AddForce(pushVec, ForceMode2D.Impulse);
-                rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
+                //rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
             }
             //print("Enemy: " + name + " collided with player");
         }
@@ -160,6 +163,7 @@ public class EnemyController : MonoBehaviour
         ballMode = true;
         rb.gravityScale = 1;
         box.enabled = true;
+        sr.sprite = deadSprite;
     }
 
 
