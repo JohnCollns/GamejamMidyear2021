@@ -47,5 +47,5 @@ MonoBehaviour:
   playerObj: {fileID: 0}
   waterObj: {fileID: 0}
   proceduralBag: []
-  procItemDist: 4
-  procItemMaxX: 5
+  procItemDist: 3.6
+  procItemMaxX: 12.4
