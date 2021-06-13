@@ -17,10 +17,16 @@ public class EnemyController : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D box;
+    private CircleCollider2D cir;
     private bool ballMode = false;
     private bool dangerousBall = false;
 
+    public Vector3[] push;
+    public float[] pushMag;
+
+    //private Rigidbody2D playerrb;
     private Transform playerTran;
+    private PlayerController pCont;
     private int platLayer;
     private int playerLayer;
     void Start()
@@ -30,6 +36,7 @@ public class EnemyController : MonoBehaviour
         passiveWalk = new Vector3(Mathf.Cos(angle) * dir, Mathf.Sin(angle), 0f) * speed[0];
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+        cir = GetComponent<CircleCollider2D>();
         box.enabled = false;
         timeCoef = (2 * Mathf.PI) / travelPeriod;
 
@@ -39,13 +46,14 @@ public class EnemyController : MonoBehaviour
         playerLayer = 10;
 
         playerTran = GameObject.Find("Player").transform;
+        pCont = playerTran.gameObject.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         int dir = transform.position.x < 0 ? 1 : -1;
-        print("Spider: " + name + ", dir: " + dir + ", at x: " + transform.position.x);
+        //print("Spider: " + name + ", dir: " + dir + ", at x: " + transform.position.x);
         Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angleRange[0] * Mathf.Deg2Rad) * dir, Mathf.Sin(angleRange[0] * Mathf.Deg2Rad)) * 5f + transform.position);
         Debug.DrawLine(transform.position, new Vector3(Mathf.Cos(angleRange[1] * Mathf.Deg2Rad) * dir, Mathf.Sin(angleRange[1] * Mathf.Deg2Rad)) * 5f + transform.position);
         // Red line: passive walk
@@ -89,21 +97,33 @@ public class EnemyController : MonoBehaviour
         {
             if (!ballMode)
             {
-                if (collision.GetContact(0).point.y > transform.position.y) // player landed above the mid point, take damage
+                //if (collision.GetContact(0).point.y > (transform.position.y + (1/3) * cir.bounds.max.y))
+                if (collision.transform.GetChild(0).position.y > (transform.position.y + (1/3) * cir.bounds.extents.y)) // player landed above the mid point, take damage
                 {
                     Hurt();
                 }
                 else // Hurt the player
                 {
-
+                    Vector3 pushVec = (collision.transform.position - transform.position).normalized * pushMag[0];
+                    collision.rigidbody.AddForce(pushVec, ForceMode2D.Impulse);
+                    rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
+                    print("Hurting the player, pushing them by vector: " + pushVec);
+                    //pCont.GetSlowed()
+                    //print("Applying to rigidbody: " + collision.rigidbody.gameObject.name + ", or other rigidbody: " + collision.otherRigidbody.name);
+                    //collision.otherRigidbody.AddForce(push[0], ForceMode2D.Impulse);
+                    //rb.AddForce(push[0] * -(2 / 3), ForceMode2D.Impulse);
                 }
             }
             else if (dangerousBall) // Hurt the player even more
             {
-
+                Vector3 pushVec = (transform.position - collision.transform.position).normalized * pushMag[1];
+                collision.otherRigidbody.AddForce(pushVec, ForceMode2D.Impulse);
+                rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
             }
             //print("Enemy: " + name + " collided with player");
         }
+        if (collision.gameObject.layer == 9)
+            Hurt();
     }
 
     private void FixedUpdate()

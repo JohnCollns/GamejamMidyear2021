@@ -109,6 +109,12 @@ MonoBehaviour:
   - 20
   - -45
   turningCoef: 0.3
+  push:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  pushMag:
+  - 200
+  - 251
 --- !u!58 &1088739683327181462
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool jumpCommand;
 
     // Slow variables
+    float affectSlow = 0f;
     float curSlow = 0f;
     float slowRemaining = 0f;
 
@@ -114,7 +115,7 @@ public class PlayerController : MonoBehaviour
             if (slowRemaining <= 0)
             {
                 slowRemaining = 0;
-                curSlow = 0f;
+                affectSlow = 0f;
             }
         }
             
@@ -126,6 +127,12 @@ public class PlayerController : MonoBehaviour
         }
         meter.value =  curFuel;
         SetFuel(curFuel);
+    }
+
+    public void GetSlowed(float newAmount, float newDur)
+    {
+        slowRemaining = newDur;
+        affectSlow = newAmount;
     }
 
     private bool GetGrounded()
