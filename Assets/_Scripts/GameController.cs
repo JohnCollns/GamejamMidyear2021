@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     private int procItemsMade = 0;
     public float procItemMaxX;
     private float baseHeight;
+
+    public AudioSource m_AudioSource;
+
     void Awake()
     {
         playerCont = playerObj.GetComponent<PlayerController>();
@@ -36,11 +39,17 @@ public class GameController : MonoBehaviour
         //foreach (int a in generationList)
         //    outp += a.ToString();
         //print("Generation list foreach: "+outp);
+
+        // Audio/Music Playing 
+        //m_AudioSource = GetComponent<AudioSource>();
+        //m_AudioSource.Play();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //m_AudioSource.Play();
 
         // Procedural generation
         int camHeight = Mathf.FloorToInt(camObj.transform.position.y / procItemDist);

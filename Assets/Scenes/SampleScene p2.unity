@@ -232,6 +232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
+--- !u!82 &108253847 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 314758891853753828, guid: e05c88ff5b5036341a9ceee55d604465, type: 3}
+  m_PrefabInstance: {fileID: 314758891635080996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &128971452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2438,10 @@ PrefabInstance:
       propertyPath: playerObj
       value: 
       objectReference: {fileID: 196664161}
+    - target: {fileID: 3700088845210954891, guid: 47a4a839ef9874b4fb5da94a20b899b4, type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 108253847}
     - target: {fileID: 3700088845210954891, guid: 47a4a839ef9874b4fb5da94a20b899b4, type: 3}
       propertyPath: proceduralBag.Array.size
       value: 7
