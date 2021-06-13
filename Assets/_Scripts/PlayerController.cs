@@ -125,6 +125,7 @@ public class PlayerController : MonoBehaviour
             SetText();
         }
         meter.value =  curFuel;
+        SetFuel(curFuel);
     }
 
     private bool GetGrounded()
@@ -185,7 +186,7 @@ public class PlayerController : MonoBehaviour
         SetText();
     }
 
-    public void SetFuel(int fuel)
+    public void SetFuel(float fuel)
     {
         meter.value = fuel;
         // calculates the colour at the given time 
