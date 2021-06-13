@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0935761f2b7358741889712b7c19157f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camObj: {fileID: 0}
+  playerObj: {fileID: 0}
+  waterObj: {fileID: 0}
+  proceduralBag: []
+  procItemDist: 4
+  procItemMaxX: 5

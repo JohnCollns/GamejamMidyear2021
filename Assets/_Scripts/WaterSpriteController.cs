@@ -22,12 +22,12 @@ public class WaterSpriteController : MonoBehaviour
     {
         // Waves go up and down
         curOsc = oscillationAmount * Mathf.Cos(Time.time * timeCoef);
-        print("CurOsc: " + curOsc +" = " + oscillationAmount + " * " + "Cos(" + Time.time + " * " + timeCoef + ") [" + Mathf.Cos(Time.time * timeCoef) + "]");
+        //print("CurOsc: " + curOsc +" = " + oscillationAmount + " * " + "Cos(" + Time.time + " * " + timeCoef + ") [" + Mathf.Cos(Time.time * timeCoef) + "]");
         //transform.position = new Vector3(transform.position.x + sideSpeed * Time.deltaTime, transform.position.y + curOsc);
         transform.position = new Vector3(transform.position.x + sideSpeed * Time.deltaTime, waterLevel + curOsc);
         if (transform.position.x > teleportThreshold)
             transform.position = new Vector3(transform.position.x + sideSpeed * Time.deltaTime - (4* 20), waterLevel);
-        print("Water: " + name + " beyond threshold: " + (transform.position.x > teleportThreshold));
+        //print("Water: " + name + " beyond threshold: " + (transform.position.x > teleportThreshold));
     }
 
     public void SetDesiredLevel(float newLevel)
