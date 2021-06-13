@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat blue thick
       objectReference: {fileID: 0}
+    - target: {fileID: 2600212506660627327, guid: 89b66600c4f1de4418689d140d5cf329, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7061693167075061013, guid: 89b66600c4f1de4418689d140d5cf329, type: 3}
       propertyPath: m_RootOrder
       value: 0
