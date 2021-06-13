@@ -93,6 +93,9 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(rb.velocity.x) < maxSpeed[controlIndex] || AccelerateAwayFromVelo())
                 rb.AddForce(sideForce[controlIndex] * Input.GetAxisRaw("Horizontal") * multiplier);
             facingRight = Input.GetAxisRaw("Horizontal") > 0;
+            if (sr.flipX != facingRight) {
+                transform.GetChild(1).localPosition = new Vector3(-transform.GetChild(1).localPosition.x, transform.GetChild(1).localPosition.y, transform.GetChild(1).localPosition.z);
+            }
             sr.flipX = facingRight;
         }
 
