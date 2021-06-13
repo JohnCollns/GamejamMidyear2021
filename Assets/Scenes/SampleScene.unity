@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   belowThresh: 33.5
-  upMove: 0
+  upMove: 79.4
 --- !u!1001 &69707631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   belowThresh: 33.5
-  upMove: 0
+  upMove: 79.4
 --- !u!4 &1107381826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2071800966333131648, guid: d1c902d4bdc560a4285104608ab7aa9e, type: 3}
@@ -1335,7 +1335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2071800966333131648, guid: d1c902d4bdc560a4285104608ab7aa9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.66
+      value: 9.63
       objectReference: {fileID: 0}
     - target: {fileID: 2071800966333131648, guid: d1c902d4bdc560a4285104608ab7aa9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2481,17 +2481,13 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 2131432589}
-    - target: {fileID: 1677336157274510321, guid: 749c12a6360900945bae68d33f280421, type: 3}
-      propertyPath: jumpAcc.Array.data[1]
-      value: 650
-      objectReference: {fileID: 0}
     - target: {fileID: 1761848334567752584, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1761848334567752584, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3005647930983306436, guid: 749c12a6360900945bae68d33f280421, type: 3}
       propertyPath: m_LocalPosition.z

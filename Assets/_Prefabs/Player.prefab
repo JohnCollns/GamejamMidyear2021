@@ -53,8 +53,8 @@ MonoBehaviour:
   weight: {fileID: 0}
   allowableGroundedDist: 0.02
   jumpAcc:
-  - 350
-  - 580
+  - 320
+  - 670
   maxSpeed:
   - 4
   - 3
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1842882245
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2ef81e8a93aa7ab48a69b44e8b5d8c64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

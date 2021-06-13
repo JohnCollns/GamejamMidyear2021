@@ -120,7 +120,7 @@ public class EnemyController : MonoBehaviour
             else if (dangerousBall) // Hurt the player even more
             {
                 Vector3 pushVec = (transform.position - collision.transform.position).normalized * pushMag[1];
-                collision.otherRigidbody.AddForce(pushVec, ForceMode2D.Impulse);
+                collision.rigidbody.AddForce(pushVec, ForceMode2D.Impulse);
                 //rb.AddForce(pushVec * -(2 / 3), ForceMode2D.Impulse);
             }
             //print("Enemy: " + name + " collided with player");
