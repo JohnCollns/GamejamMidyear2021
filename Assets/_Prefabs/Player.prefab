@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1677336157274510092}
   - component: {fileID: 1677336157274510093}
   - component: {fileID: 1761848334567752584}
+  - component: {fileID: 2042024505368448695}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1167a0fa9cd34dd469ad7c4437baefcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2042024505368448695}
   weight: {fileID: 0}
   allowableGroundedDist: 0.02
   jumpAcc:
@@ -96,6 +98,8 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fuelFill: {fileID: 0}
+  waterGracePeriod: 2.5
+  gameoverSceneName: Gameover
 --- !u!50 &1677336157274510092
 Rigidbody2D:
   serializedVersion: 4
@@ -194,6 +198,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2042024505368448695
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677336157274510095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 900b197ee253ef0479f94f070a9bee5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2440140902018141941
 GameObject:
   m_ObjectHideFlags: 0

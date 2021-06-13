@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!50 &27311965 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7507602863786550503, guid: 49003801430b73d4a9bfcd8581fe3f1f, type: 3}
-  m_PrefabInstance: {fileID: 7507602863792806842}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &83059443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +216,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695175608848482238, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176402925587960255, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176402925587960255, guid: ee6381932b622ce4899e9075a9118f42, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -652,6 +655,8 @@ MonoBehaviour:
   - 60
   - 130
   turningCoef: 0.3
+  push: []
+  pushMag: []
 --- !u!4 &445630901
 Transform:
   m_ObjectHideFlags: 0
@@ -915,6 +920,8 @@ MonoBehaviour:
   - 60
   - 130
   turningCoef: 0.3
+  push: []
+  pushMag: []
 --- !u!4 &1005290668
 Transform:
   m_ObjectHideFlags: 0
@@ -1735,7 +1742,7 @@ PrefabInstance:
     - target: {fileID: 1241675151873431797, guid: 3155105a2bb5e86448e0a914c526532d, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 27311965}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3155105a2bb5e86448e0a914c526532d, type: 3}
 --- !u!1001 &1677336158125963634

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
     public GameObject weight;
     private Rigidbody2D wrb;
     
@@ -111,6 +112,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGrounded)
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        else
+            animator.SetFloat("Speed", 0f);
+
         if (Input.GetAxisRaw("Jump") > 0f)
             jumpCommand = true;
         else
