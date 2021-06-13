@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
         int[] firstGen = GenerateSequence();
         for (int i = 0; i < firstGen.Length; i++)
             generationList.Add(firstGen[i]);
-        baseHeight = camObj.transform.position.y + cam.orthographicSize;
+        baseHeight = camObj.transform.position.y + cam.orthographicSize + 2f;
         //print("Procedural bag length: " + proceduralBag.Length);
         //string outp = "";
         //for (int i = 0; i < generationList.Count; i++)

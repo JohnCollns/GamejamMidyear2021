@@ -46,6 +46,15 @@ MonoBehaviour:
   camObj: {fileID: 0}
   playerObj: {fileID: 0}
   waterObj: {fileID: 0}
-  proceduralBag: []
+  proceduralBag:
+  - {fileID: 421131452271659411, guid: 89b66600c4f1de4418689d140d5cf329, type: 3}
+  - {fileID: 421131452271659411, guid: 89b66600c4f1de4418689d140d5cf329, type: 3}
+  - {fileID: 421131452271659411, guid: 89b66600c4f1de4418689d140d5cf329, type: 3}
+  - {fileID: 273464553885015104, guid: d1c902d4bdc560a4285104608ab7aa9e, type: 3}
+  - {fileID: 273464553885015104, guid: d1c902d4bdc560a4285104608ab7aa9e, type: 3}
+  - {fileID: 4097076984201489409, guid: cb7043a0e3f5af74592ad968ed983084, type: 3}
+  - {fileID: 2049060349176299740, guid: ab66a2b8091f7e44f8de2ff4d46dddb2, type: 3}
+  - {fileID: 6841162066763562401, guid: 644f526d3b9c1b84da28de5a82f15a30, type: 3}
+  - {fileID: 3841298906486313237, guid: 8eaf4b4bdff181c499a4c34189176a71, type: 3}
   procItemDist: 3.6
   procItemMaxX: 12.4

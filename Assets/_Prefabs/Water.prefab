@@ -393,7 +393,8 @@ GameObject:
   - component: {fileID: 8819163151395989188}
   - component: {fileID: 1883591625232203691}
   - component: {fileID: 5719052068270076312}
-  m_Layer: 0
+  - component: {fileID: 7619307639171294001}
+  m_Layer: 13
   m_Name: water (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,6 +487,32 @@ MonoBehaviour:
   travelPeriod: 3.76
   oscillationAmount: 1.4
   curOsc: 0
+--- !u!61 &7619307639171294001
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202383721664065418}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -30}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.000002, y: 20.000002}
+    newSize: {x: 20.000002, y: 20.000002}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 100, y: 80}
+  m_EdgeRadius: 0
 --- !u!1 &3062194658968368083
 GameObject:
   m_ObjectHideFlags: 0

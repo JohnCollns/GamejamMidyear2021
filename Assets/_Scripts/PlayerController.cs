@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class PlayerController : MonoBehaviour
     public Gradient fuelGradient;
     public Image fuelFill;
     //public int maxFuel = 20;
+
+    public float waterGracePeriod = 2.5f;
+    private float timeToDrown = -1f;
+    public string gameoverSceneName = "Gameover";
 
     void Start()
     {
@@ -130,6 +135,39 @@ public class PlayerController : MonoBehaviour
         }
         meter.value =  curFuel;
         SetFuel(curFuel);
+
+        if (timeToDrown > -1f)
+        {
+            timeToDrown -= Time.deltaTime;
+            if (timeToDrown <= 0)
+                GameOver();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 12) // Player hit the killer at the bottom, gameover
+        {
+            GameOver();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 13) // Player hit the water
+        {
+            if (timeToDrown > -1f) // Player is already drowning
+            {
+
+            }
+            else
+            {
+                timeToDrown = waterGracePeriod;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        timeToDrown = -1f;
     }
 
     public void GetSlowed(float newAmount, float newDur)
@@ -206,6 +244,7 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         // will need to link this to when the player falls off or loses to an enemy?
+        SceneManager.LoadScene(gameoverSceneName);
     }
 
 }
